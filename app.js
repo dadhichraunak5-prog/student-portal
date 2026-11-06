@@ -989,3 +989,33 @@ function handleContactSubmit(event) {
     `;
   }
 }
+
+// ══════════════════════════════════════════════
+// TERMS & LEGAL DISCLAIMER MODAL
+// ══════════════════════════════════════════════
+function openTermsModal() {
+  const modal = document.getElementById('termsModal');
+  if (!modal) return;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTermsModal() {
+  const modal = document.getElementById('termsModal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close terms modal on background click or ESC key
+document.addEventListener('DOMContentLoaded', () => {
+  const termsModal = document.getElementById('termsModal');
+  if (termsModal) {
+    termsModal.addEventListener('click', (e) => {
+      if (e.target === termsModal) closeTermsModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTermsModal();
+  });
+});
