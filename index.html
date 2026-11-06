@@ -81,7 +81,7 @@
       <div class="stat-div"></div>
       <div class="stat"><span>11+</span><small>Loan Products</small></div>
       <div class="stat-div"></div>
-      <div class="stat">99%<span></span><small>EASY TO USE</small></div>
+      <div class="stat"><span>99%</span><small>EASY TO USE</small></div>
       <div class="stat-div"></div>
       <div class="stat"><span>Free</span><small>No Login Needed</small></div>
     </div>
@@ -184,7 +184,7 @@
           </div>
           <!-- Row 3 -->
           <div class="form-group">
-            <label>Gender 🧑‍🎓</label>
+            <label>Gender 🧑🎓</label>
             <select name="gender" id="gender">
               <option value="">Prefer not to say</option>
               <option value="female">Female / Girl</option>
@@ -694,16 +694,88 @@
   </div>
 </section>
 
+<!-- ───────────────── LEGAL TERMS & CONDITIONS MODAL ───────────────── -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box legal-modal-box">
+    <button class="modal-close" onclick="closeTermsModal()">✕</button>
+    <div class="legal-modal-inner">
+      <div class="legal-badge">⚖️ Legal Protection &amp; Terms of Use</div>
+      <h2 style="color:var(--white); font-size:1.4rem; margin-bottom:6px;">Terms of Service &amp; Comprehensive Legal Disclaimer</h2>
+      <p style="color:var(--text3); font-size:0.8rem; margin-bottom:16px;">Effective: Academic Year 2026–2027 | Applicable Jurisdiction: India</p>
+
+      <div class="legal-alert-box">
+        <strong>⚠️ MANDATORY LEGAL NOTICE:</strong> ScholarPath India is an independent, non-governmental, volunteer-curated educational platform created solely for student awareness. By accessing, browsing, or using any tool on this site, you unconditionally agree to and are legally bound by the terms set forth below.
+      </div>
+
+      <div class="legal-clause">
+        <h4>1. Complete Non-Affiliation with Government &amp; Banks</h4>
+        <p>ScholarPath India is <strong>NOT affiliated, associated, authorized, endorsed by, or in any official way connected</strong> with the Government of India, State Governments (including Government of Rajasthan), the Ministry of Education, Ministry of Minority Affairs, UGC, AICTE, State Bank of India (SBI), Reserve Bank of India (RBI), or any other bank, NBFC, or educational trust. All official product names, scheme titles (NSP, PM-Vidyalaxmi, JanSamarth, etc.), logos, and registered trademarks belong exclusively to their respective government departments and banking institutions.</p>
+      </div>
+
+      <div class="legal-clause">
+        <h4>2. Informational Purpose Only — No Guarantee of Approval</h4>
+        <p>All information, scholarship criteria, deadlines, award figures, interest rates, and loan terms provided on this platform are compiled from public circulars, news reports, and aggregator archives. All content is provided strictly on an <strong>"as-is" and "as-available"</strong> basis.</p>
+        <ul>
+          <li>We do <strong>NOT</strong> guarantee scholarship award, sanction, qualification, or disbursement.</li>
+          <li>We do <strong>NOT</strong> guarantee loan sanction, margin exemption, or interest subsidy eligibility.</li>
+          <li>Eligibility Checker and EMI Calculator results are illustrative estimates and do NOT constitute an official lender quote, sanction letter, or government certificate.</li>
+        </ul>
+      </div>
+
+      <div class="legal-clause">
+        <h4>3. Absolute Limitation of Liability &amp; Indemnity</h4>
+        <p>Under no legal theory (contract, tort, negligence, or strict liability) shall ScholarPath India, its creators, developers, contributors, or hosting providers be liable for:</p>
+        <ul>
+          <li>Any direct, indirect, incidental, punitive, or consequential loss or dispute arising from your use of this site.</li>
+          <li>Application rejections, cancelled schemes, missed portal deadlines, or delayed government payments.</li>
+          <li>Financial liabilities, floating interest rate fluctuations, bank processing fees, or non-disbursed funds.</li>
+          <li>Any typographical errors, inaccuracies, or outdated data on the site.</li>
+        </ul>
+        <p>You agree to indemnify and hold harmless the developers of ScholarPath India against any claims, losses, or expenses resulting from your reliance on this site.</p>
+      </div>
+
+      <div class="legal-clause">
+        <h4>4. Mandatory Duty of Independent Verification</h4>
+        <p>Government scheme rules, income caps, and bank benchmark lending rates fluctuate regularly. <strong>Every user (student, parent, guardian) has the sole legal duty to verify all details, deadlines, documents, and rules directly on the respective official government portal (e.g., <a href="https://scholarships.gov.in" target="_blank" rel="noopener">scholarships.gov.in</a>) or official bank branch before submitting applications or making financial commitments.</strong></p>
+      </div>
+
+      <div class="legal-clause">
+        <h4>5. Zero Fee Policy &amp; Anti-Fraud Safeguard</h4>
+        <p>ScholarPath India is 100% free. We <strong>never charge fees</strong> for scheme discovery, matching, or recommendations. We will NEVER solicit OTPs, passwords, Aadhaar OTPs, net banking credentials, or UPI payments. Any voluntary contribution made via UPI QR code is completely optional, non-refundable, and represents a charitable voluntary gift solely to help defray website hosting expenses, conferring no special service or relationship.</p>
+      </div>
+
+      <div class="legal-clause">
+        <h4>6. External Links &amp; Third-Party Services</h4>
+        <p>This portal contains hyperlinks to external government and banking websites. ScholarPath India exercises no control over third-party content, server uptime, security, or privacy practices. Accessing external links is solely at your own risk.</p>
+      </div>
+
+      <div class="legal-clause">
+        <h4>7. Severability &amp; Jurisdiction</h4>
+        <p>If any provision of this agreement is deemed unlawful or unenforceable, the remaining provisions shall remain fully in effect. Any dispute or legal inquiry arising out of this portal shall be subject to the exclusive jurisdiction of the competent courts in India.</p>
+      </div>
+
+      <button class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;" onclick="closeTermsModal()">
+        ✅ I Understand &amp; Agree to Terms
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- ───────────────── FOOTER ───────────────── -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo"><span class="logo-icon">🎓</span><span class="logo-text">ScholarPath<span class="logo-accent">India</span></span></div>
-        <p>Your Guilde to Scholarship & Education Loans In India . No login needed. Free forever.</p>
+        <p>Your Guide to Scholarships &amp; Education Loans in India. No login needed. Free forever.</p>
         <p style="margin-top:8px; font-size:0.85rem; color:var(--text2);">
           📬 <strong>Contact:</strong> <a href="mailto:ScholarPathIndia@proton.me" style="color:var(--accent); font-weight:600;">ScholarPathIndia@proton.me</a>
         </p>
+        <div class="footer-legal-badge">
+          <a href="javascript:void(0)" onclick="openTermsModal()" class="footer-terms-btn">
+            ⚖️ View Full Terms, Conditions &amp; Legal Disclaimer →
+          </a>
+        </div>
         <p class="footer-disclaimer">Disclaimer: ScholarPath India is an independent informational platform and is not affiliated with
           any government body or financial institution. Scholarship and loan details, deadlines and eligibility information are based
           on available sources and website updates as of the last updated date. Information may change, become outdated or contain errors
@@ -719,9 +791,10 @@
         <a href="#scholarships">Scholarships</a>
         <a href="#loans">Education Loans</a>
         <a href="#content">Resources</a>
-        <a href="#support">Support & Helplines</a>
+        <a href="#support">Support &amp; Helplines</a>
         <a href="#contact">Contact &amp; Feedback 📬</a>
         <a href="#checker">Eligibility Checker</a>
+        <a href="javascript:void(0)" onclick="openTermsModal()">Terms &amp; Disclaimer ⚖️</a>
         <a href="#donate-footer">Support the Portal 💖</a>
       </div>
       <div class="footer-links">
@@ -738,7 +811,7 @@
         <a href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP (scholarships.gov.in)</a>
         <a href="https://sbi.bank.in/" target="_blank" rel="noopener">SBI (WEB)</a>
         <a href="https://sje.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan WEB</a>
-        <a href="https://www.buddy4study.com/" target="_blank" rel="noopener">Buddy4Studys</a>
+        <a href="https://www.buddy4study.com/" target="_blank" rel="noopener">Buddy4Study</a>
         <a href="https://www.ugc.gov.in/" target="_blank" rel="noopener">UGC WEB</a>
         <small>Data snapshot: Nov 2026. Rates & deadlines may change.</small>
       </div>
@@ -782,8 +855,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>Built with ❤️ for every student in India. Data ON Nov 2026 · <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">Report Cyber Fraud: 1930</a></p>
-      <p></p>
+      <p>Built with ❤️ for every student in India. Data ON Nov 2026 · <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">Report Cyber Fraud: 1930</a> · <a href="javascript:void(0)" onclick="openTermsModal()" style="color:var(--text2); text-decoration:underline;">Terms &amp; Conditions</a></p>
     </div>
   </div>
 </footer>
