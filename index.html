@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Student Portal India – Find scholarships, education loans, eligibility checker and support in one place." />
+  <title>ScholarPath India – Scholarships & Loans for Students</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ───────────────── 3D INTRO SCREEN ───────────────── -->
+<div class="intro-overlay" id="introOverlay">
+  <div class="intro-bg">
+    <div class="intro-particles" id="introParticles"></div>
+    <div class="intro-grid"></div>
+    <div class="intro-glow glow1"></div>
+    <div class="intro-glow glow2"></div>
+    <div class="intro-glow glow3"></div>
+  </div>
+  <div class="intro-content">
+    <div class="intro-floating-icons">
+      <span class="float-icon fi1">🎓</span>
+      <span class="float-icon fi2">💰</span>
+      <span class="float-icon fi3">📚</span>
+      <span class="float-icon fi4">🏆</span>
+      <span class="float-icon fi5">✨</span>
+      <span class="float-icon fi6">🇮🇳</span>
+    </div>
+    <div class="intro-logo-badge">🎓 ScholarPath India</div>
+    <div class="intro-text-container">
+      <div class="intro-typewriter" id="introTypewriter"></div>
+      <span class="intro-cursor" id="introCursor">|</span>
+    </div>
+    <button class="intro-enter-btn hidden" id="introEnterBtn" onclick="dismissIntro()">
+      Enter Portal <span class="intro-arrow">→</span>
+    </button>
+    <div class="intro-skip" onclick="dismissIntro()">Skip intro ↓</div>
+  </div>
+</div>
+
+<!-- ───────────────── NAV ───────────────── -->
+<header class="navbar" id="top">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-icon">🎓</span>
+      <span class="logo-text">ScholarPath<span class="logo-accent">India</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#scholarships">🏆 Scholarships</a>
+      <a href="#loans">🏦 Loans</a>
+      <a href="#content">📚 Resources</a>
+      <a href="#support">🤝 Support</a>
+      <a href="#contact">📬 Contact Us</a>
+      <a href="#checker" class="btn-nav">Check Eligibility ✨</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ───────────────── HERO ───────────────── -->
+<section class="hero">
+  <div class="hero-bg-shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">🇮🇳 India's #1 Student Aid Portal</div>
+    <h1>Find Your <span class="grad-text">Scholarship</span><br/>or <span class="grad-text">Education Loan</span></h1>
+    <p class="hero-sub">All Central & State scholarships · Education loans · Eligibility checker · Official helplines · Resources — in one Gen-Z friendly place.</p>
+    <div class="hero-btns">
+      <a href="#checker" class="btn-primary">🔍 Check My Eligibility</a>
+      <a href="#scholarships" class="btn-secondary">Browse All Schemes →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span>60+</span><small>Scholarships</small></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span>11+</span><small>Loan Products</small></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span>100%</span><small>Official Data</small></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span>Free</span><small>No Login Needed</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── 4 ICON CARDS ───────────────── -->
+<section class="four-cards">
+  <div class="container">
+    <div class="cards-grid">
+      <a href="#scholarships" class="card-icon scholarships-card">
+        <div class="card-emoji">🏆</div>
+        <h3>Scholarships</h3>
+        <p>Central, State, Private & CSR schemes. India-wide coverage.</p>
+        <span class="card-cta">Explore →</span>
+      </a>
+      <a href="#loans" class="card-icon loans-card">
+        <div class="card-emoji">🏦</div>
+        <h3>Education Loans</h3>
+        <p>Compare banks, rates, margin, subsidy & guarantees.</p>
+        <span class="card-cta">Compare →</span>
+      </a>
+      <a href="#content" class="card-icon content-card">
+        <div class="card-emoji">📚</div>
+        <h3>Resources</h3>
+        <p>Document checklists, guides, glossary & calculators.</p>
+        <span class="card-cta">Learn →</span>
+      </a>
+      <a href="#support" class="card-icon support-card">
+        <div class="card-emoji">🤝</div>
+        <h3>Help & Support</h3>
+        <p>Official helplines, emails, fraud prevention tips.</p>
+        <span class="card-cta">Get Help →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── ELIGIBILITY CHECKER ───────────────── -->
+<section class="section" id="checker">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">✨ Smart Tool</span>
+      <h2>Eligibility Checker</h2>
+      <p>Fill in your details and we'll match you with scholarships & loans you may qualify for.</p>
+    </div>
+    <div class="checker-card">
+      <form id="eligibilityForm">
+        <div class="form-grid">
+          <!-- Row 1 -->
+          <div class="form-group">
+            <label>Study Level 📖</label>
+            <select name="studyLevel" id="studyLevel" required>
+              <option value="">Select level...</option>
+              <option value="class9-10">Class 9–10</option>
+              <option value="class11-12">Class 11–12</option>
+              <option value="iti-diploma">ITI / Diploma / Polytechnic</option>
+              <option value="ug-general">UG – General (BA/BSc/BCom)</option>
+              <option value="ug-professional">UG – Professional (BTech/MBBS/BArch)</option>
+              <option value="pg">Postgraduate (MA/MSc/MBA/MTech)</option>
+              <option value="phd">PhD / Research</option>
+              <option value="overseas">Overseas Study</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Domicile State 🏠</label>
+            <select name="domicile" id="domicile" required>
+              <option value="">Select state...</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="ne-region">North-East Region (Assam/Meghalaya etc.)</option>
+              <option value="jk-ladakh">Jammu & Kashmir / Ladakh</option>
+              <option value="other">Other State</option>
+            </select>
+          </div>
+          <!-- Row 2 -->
+          <div class="form-group">
+            <label>Annual Family Income 💰</label>
+            <select name="income" id="income" required>
+              <option value="">Select range...</option>
+              <option value="0-250000">Up to ₹2.5 Lakh</option>
+              <option value="250001-450000">₹2.5L – ₹4.5 Lakh</option>
+              <option value="450001-600000">₹4.5L – ₹6 Lakh</option>
+              <option value="600001-800000">₹6L – ₹8 Lakh</option>
+              <option value="800001-1200000">₹8L – ₹12 Lakh</option>
+              <option value="1200001-1500000">₹12L – ₹15 Lakh</option>
+              <option value="above1500000">Above ₹15 Lakh</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Category 🪪</label>
+            <select name="category" id="category">
+              <option value="">Prefer not to say</option>
+              <option value="general">General / EWS</option>
+              <option value="obc">OBC / EBC / SBC</option>
+              <option value="sc">SC</option>
+              <option value="st">ST</option>
+              <option value="dnt">DNT / Nomadic</option>
+              <option value="minority">Minority</option>
+            </select>
+          </div>
+          <!-- Row 3 -->
+          <div class="form-group">
+            <label>Gender 🧑‍🎓</label>
+            <select name="gender" id="gender">
+              <option value="">Prefer not to say</option>
+              <option value="female">Female / Girl</option>
+              <option value="male">Male</option>
+              <option value="other">Other / Transgender</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Previous Marks (%) 📊</label>
+            <select name="marks" id="marks">
+              <option value="">Select range...</option>
+              <option value="90+">90% and above</option>
+              <option value="80-90">80% – 90%</option>
+              <option value="75-80">75% – 80%</option>
+              <option value="60-75">60% – 75%</option>
+              <option value="55-60">55% – 60%</option>
+              <option value="below55">Below 55%</option>
+            </select>
+          </div>
+          <!-- Row 4 -->
+          <div class="form-group">
+            <label>Special Category 🌟</label>
+            <select name="special" id="special">
+              <option value="none">None</option>
+              <option value="pwd">Person with Disability (PwD)</option>
+              <option value="orphan">Orphan / Both parents deceased</option>
+              <option value="capf">Ward of CAPF / Defence / Police</option>
+              <option value="railway">Ward of Railway Employee</option>
+              <option value="beedi">Ward of Beedi / Cine / IOMC Worker</option>
+              <option value="covid-orphan">COVID-19 Orphan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Course Stream 🎯</label>
+            <select name="stream" id="stream">
+              <option value="any">Any / Not Sure</option>
+              <option value="engineering">Engineering / Technology</option>
+              <option value="medical">Medical / MBBS / BDS</option>
+              <option value="agriculture">Agriculture / Allied</option>
+              <option value="law">Law</option>
+              <option value="arts-science">Arts / Science / Commerce</option>
+              <option value="management">Management / MBA</option>
+              <option value="skill">Skill / ITI / Vocational</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="btn-primary btn-large">🔍 Show My Matches</button>
+          <button type="reset" class="btn-ghost" onclick="clearResults()">Clear</button>
+        </div>
+      </form>
+      <!-- Results -->
+      <div id="eligibilityResults" class="results-container hidden"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── SCHOLARSHIPS ───────────────── -->
+<section class="section section-dark" id="scholarships">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🏆 All India</span>
+      <h2>Scholarships Directory</h2>
+      <p>Browse Central Government, Rajasthan State, and Private/CSR scholarships. Click any card for full details.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="central">🏛️ Central Govt</button>
+      <button class="filter-btn" data-filter="rajasthan">🏜️ Rajasthan</button>
+      <button class="filter-btn" data-filter="private">🏢 Private / CSR</button>
+      <button class="filter-btn" data-filter="girl">👩 For Girls</button>
+      <button class="filter-btn" data-filter="pwd">♿ For PwD</button>
+      <button class="filter-btn" data-filter="merit">🌟 Merit Based</button>
+      <button class="filter-btn" data-filter="minority">🕌 Minority</button>
+      <button class="filter-btn" data-filter="overseas">🌐 Overseas</button>
+    </div>
+
+    <div class="scholarships-grid" id="scholarshipGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── SCHOLARSHIP MODAL ───────────────── -->
+<div class="modal-overlay" id="scholarshipModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ───────────────── LOANS ───────────────── -->
+<section class="section" id="loans">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🏦 Finance</span>
+      <h2>Education Loans</h2>
+      <p>Compare SBI and government-backed loan products. Understand interest rates, margin, subsidy & repayment.</p>
+    </div>
+
+    <!-- Glossary strip -->
+    <div class="glossary-strip">
+      <span class="gloss-item" title="Financial aid that does NOT need repayment if rules followed.">💡 Scholarship ≠ Loan</span>
+      <span class="gloss-item" title="Government pays some interest for a defined period.">📉 Interest Subsidy</span>
+      <span class="gloss-item" title="Govt guarantee to bank; does NOT remove your repayment duty.">🛡️ Credit Guarantee</span>
+      <span class="gloss-item" title="Your contribution toward course cost not funded by loan.">💸 Margin</span>
+      <span class="gloss-item" title="Course duration + extra time before EMI starts. Interest still accrues.">⏳ Moratorium</span>
+    </div>
+
+    <div class="loans-grid" id="loansGrid">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Govt Subsidy Cards -->
+    <h3 class="subsection-title">🏛️ Government Interest Subsidy & Guarantee Schemes</h3>
+    <div class="subsidy-grid" id="subsidyGrid">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- EMI Calculator -->
+    <div class="calc-card" id="calculator">
+      <h3>🧮 Loan EMI Estimator</h3>
+      <p class="calc-note">This is an estimate only — not a lender quote.</p>
+      <div class="calc-grid">
+        <div class="form-group">
+          <label>Loan Amount (₹)</label>
+          <input type="number" id="calcAmount" placeholder="e.g. 500000" min="10000" />
+        </div>
+        <div class="form-group">
+          <label>Interest Rate (% per year)</label>
+          <input type="number" id="calcRate" placeholder="e.g. 9.65" step="0.01" />
+        </div>
+        <div class="form-group">
+          <label>Repayment Tenure (Years)</label>
+          <input type="number" id="calcTenure" placeholder="e.g. 15" min="1" max="20" />
+        </div>
+        <div class="form-group">
+          <label>Moratorium (Months)</label>
+          <input type="number" id="calcMoratorium" placeholder="e.g. 12" min="0" />
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calculateEMI()">Calculate EMI</button>
+      <div id="calcResult" class="calc-result hidden"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── RESOURCES / CONTENT ───────────────── -->
+<section class="section section-dark" id="content">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📚 Guides</span>
+      <h2>Resources & Guidance</h2>
+      <p>Everything you need to apply successfully — from document checklists to fraud prevention.</p>
+    </div>
+
+    <div class="resources-grid">
+      <!-- Doc Checklist -->
+      <div class="resource-card">
+        <div class="resource-icon">📋</div>
+        <h3>Document Checklist</h3>
+        <div class="checklist-tabs">
+          <button class="tab-btn active" data-tab="academic">Academic</button>
+          <button class="tab-btn" data-tab="identity">Identity</button>
+          <button class="tab-btn" data-tab="income">Income</button>
+          <button class="tab-btn" data-tab="loan-docs">Loan</button>
+        </div>
+        <div class="tab-content active" id="tab-academic">
+          <ul class="check-list">
+            <li>✅ Class 10 marksheet / certificate</li>
+            <li>✅ Class 12 marksheet / certificate</li>
+            <li>✅ Latest semester marksheet (for renewal)</li>
+            <li>✅ Entrance test scorecard / rank letter</li>
+            <li>✅ Admission letter / bonafide certificate / college ID</li>
+            <li>✅ Current year tuition fee receipt & official fee structure</li>
+            <li>✅ Gap certificate (if applicable)</li>
+            <li>✅ Course duration & institute recognition proof</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="tab-identity">
+          <ul class="check-list">
+            <li>✅ Aadhaar card (masked copy where permitted)</li>
+            <li>✅ Domicile / residence certificate</li>
+            <li>✅ Jan Aadhaar (for Rajasthan schemes)</li>
+            <li>✅ Bank passbook / cancelled cheque (IFSC visible)</li>
+            <li>✅ Recent photograph & signature</li>
+            <li>✅ PAN (where required by lender)</li>
+            <li>✅ UDID card (for PwD applicants)</li>
+            <li>✅ Passport (for overseas study)</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="tab-income">
+          <ul class="check-list">
+            <li>✅ Family income certificate (issued by competent authority)</li>
+            <li>✅ Salary slip / employer certificate / ITR / pension proof</li>
+            <li>✅ Caste/category certificate (SC/ST/OBC/SBC/EBC/DNT)</li>
+            <li>✅ EWS certificate (where applicable)</li>
+            <li>✅ Minority certificate/declaration (where required)</li>
+            <li>✅ Disability certificate / UDID</li>
+            <li>✅ Death certificate (for orphan / martyr ward)</li>
+            <li>✅ Ex-serviceman/CAPF proof (if applying under service-ward scheme)</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="tab-loan-docs">
+          <ul class="check-list">
+            <li>✅ Signed loan application form + photographs</li>
+            <li>✅ Student KYC: PAN, Aadhaar, address proof</li>
+            <li>✅ Co-borrower (parent/guardian) KYC & income proof</li>
+            <li>✅ Last 6 months bank statements</li>
+            <li>✅ Scholarship / assistantship letter (if any)</li>
+            <li>✅ Asset-liability statement (if required)</li>
+            <li>✅ Collateral title deeds / valuation (if required)</li>
+            <li>✅ Overseas: passport, offer letter, university cost estimate, visa</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- How to Apply -->
+      <div class="resource-card">
+        <div class="resource-icon">🗺️</div>
+        <h3>How to Apply (NSP)</h3>
+        <ol class="steps-list">
+          <li><strong>OTR Registration</strong> – Visit <a href="https://scholarships.gov.in/" target="_blank" rel="noopener">scholarships.gov.in</a> → Register with Aadhaar → Get 14-digit OTR ID</li>
+          <li><strong>Select Scheme</strong> – Browse All-Scholarships → Open scheme card → Read eligibility & deadline carefully</li>
+          <li><strong>Fill Application</strong> – Login with OTR ID → Fill academic, bank, income details</li>
+          <li><strong>Upload Documents</strong> – JPG/PDF under size limit → Marksheets, certificate, income proof</li>
+          <li><strong>Institute Verification</strong> – Submit at college scholarship office before institute deadline</li>
+          <li><strong>Track Status</strong> – Login to NSP → Application Status; payment via PFMS → <a href="https://pfms.nic.in/" target="_blank" rel="noopener">pfms.nic.in</a></li>
+        </ol>
+        <div class="tip-box">💡 <strong>Tip:</strong> Students with disabilities must give UDID data-sharing consent on the UDID portal <em>before</em> applying on NSP.</div>
+      </div>
+
+      <!-- Rajasthan SSO Guide -->
+      <div class="resource-card">
+        <div class="resource-icon">🏜️</div>
+        <h3>Rajasthan SSO Guide</h3>
+        <ol class="steps-list">
+          <li>Create/recover SSO ID at <a href="https://sso.rajasthan.gov.in/" target="_blank" rel="noopener">sso.rajasthan.gov.in</a></li>
+          <li>Ensure <strong>Jan Aadhaar</strong> family data is current (<a href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">janaadhaar.rajasthan.gov.in</a>)</li>
+          <li>Login to SSO → Open Scholarship / SJE / College Education service</li>
+          <li>Select: Academic year → Department → Scheme → Course → Year</li>
+          <li>Upload JPG/PDF scans (usually ≤512 KB each)</li>
+          <li>Submit → Save application number → Check objections regularly</li>
+          <li>Submit physical documents to college nodal office before the institute deadline</li>
+        </ol>
+        <div class="tip-box">🔑 <strong>Forgot SSO ID?</strong> SMS <code>RJ SSO</code> to <strong>9223166166</strong> from your registered mobile.</div>
+      </div>
+
+      <!-- Glossary -->
+      <div class="resource-card">
+        <div class="resource-icon">📖</div>
+        <h3>Loan Glossary (Plain Language)</h3>
+        <div class="glossary-list">
+          <div class="gloss-row"><span class="gloss-term">Scholarship</span><span class="gloss-def">Money given to you — no repayment if you follow the rules.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Education Loan</span><span class="gloss-def">Borrowed money — you MUST repay principal + interest as per bank contract.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Interest Subsidy</span><span class="gloss-def">Govt pays some interest for a defined period. Principal repayment is still yours.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Credit Guarantee</span><span class="gloss-def">Govt protects the bank, NOT you. You still must repay.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Collateral</span><span class="gloss-def">Asset (like property) pledged to the bank as security.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Co-Borrower</span><span class="gloss-def">Parent / guardian who shares legal repayment responsibility with you.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Margin</span><span class="gloss-def">Portion of course cost you/family pay from your own pocket.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Moratorium</span><span class="gloss-def">Break period (course + extra months) before EMI starts. Interest still accrues!</span></div>
+          <div class="gloss-row"><span class="gloss-term">Floating Rate</span><span class="gloss-def">Your EMI can go up or down as the benchmark rate changes.</span></div>
+          <div class="gloss-row"><span class="gloss-term">Processing Fee</span><span class="gloss-def">Bank's one-time charge for processing your loan. Check GST separately.</span></div>
+        </div>
+      </div>
+
+      <!-- Discovery Platforms -->
+      <div class="resource-card">
+        <div class="resource-icon">🔍</div>
+        <h3>Official Discovery Platforms</h3>
+        <div class="platform-links">
+          <a href="https://scholarships.gov.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>🏛️</span>
+            <div><strong>National Scholarship Portal (NSP)</strong><small>Apply for central & state schemes, track payment</small></div>
+          </a>
+          <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>🔎</span>
+            <div><strong>MyScheme</strong><small>Discover central & state schemes by your profile</small></div>
+          </a>
+          <a href="https://scholarship.rajasthan.gov.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>🏜️</span>
+            <div><strong>Rajasthan Scholarship Portal</strong><small>All Rajasthan state scholarships</small></div>
+          </a>
+          <a href="https://www.buddy4study.com/" target="_blank" rel="noopener" class="platform-link">
+            <span>🎓</span>
+            <div><strong>Buddy4Study</strong><small>Private & CSR scholarship search</small></div>
+          </a>
+          <a href="https://pmvidyalaxmi.co.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>🏦</span>
+            <div><strong>PM-Vidyalaxmi Portal</strong><small>Education loans for QHEI students</small></div>
+          </a>
+          <a href="https://www.jansamarth.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>💼</span>
+            <div><strong>JanSamarth</strong><small>Skill loans & credit-linked govt schemes</small></div>
+          </a>
+          <a href="https://pfms.nic.in/" target="_blank" rel="noopener" class="platform-link">
+            <span>💳</span>
+            <div><strong>PFMS</strong><small>Track your scholarship payment status</small></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fraud Prevention -->
+      <div class="resource-card fraud-card">
+        <div class="resource-icon">🚨</div>
+        <h3>Fraud Prevention — Stay Safe!</h3>
+        <ul class="fraud-list">
+          <li>🚫 <strong>Never pay</strong> anyone promising guaranteed scholarship selection or faster NSP approval</li>
+          <li>🚫 <strong>Never share</strong> OTP, UPI PIN, ATM PIN, net-banking password with anyone</li>
+          <li>🚫 <strong>Never send</strong> full Aadhaar or bank credentials to unofficial WhatsApp numbers</li>
+          <li>✅ Check domain carefully — official govt sites use <code>.gov.in</code></li>
+          <li>✅ Report fraud to Buddy4Study: <a href="mailto:reportfraud@buddy4study.com">reportfraud@buddy4study.com</a></li>
+          <li>✅ Cybercrime helpline: <strong>1930</strong> | <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">cybercrime.gov.in</a></li>
+          <li>✅ Keep application number, receipt & email trail safely</li>
+        </ul>
+      </div>
+
+      <!-- Support the Developer -->
+      <div class="resource-card donate-card" id="donate">
+        <div class="resource-icon">💖</div>
+        <h3>Support This Portal</h3>
+        <p>This portal is built with love to help students like you navigate India's scholarship and loan system for <strong>free</strong>. If it helped you, consider buying the developer a coffee! ☕</p>
+        <div class="qr-container">
+          <div class="qr-placeholder" id="qrPlaceholder">
+            <div class="qr-box">
+              <span>📱</span>
+              <p>QR Code</p>
+              <small>Upload your UPI QR code as <code>assets/qr.png</code></small>
+            </div>
+          </div>
+          <img src="assets/qr.png" alt="Donate QR Code" class="qr-img hidden" id="qrImage" onerror="this.classList.add('hidden'); document.getElementById('qrPlaceholder').classList.remove('hidden')" />
+        </div>
+        <p class="donate-note">Scan the QR code with any UPI app (PhonePe, GPay, Paytm etc.) to donate any amount you wish. Every ₹ helps keep this portal running and updated! 🙏</p>
+        <div class="donate-badges">
+          <span>📱 PhonePe</span>
+          <span>💚 GPay</span>
+          <span>🔵 Paytm</span>
+          <span>🟣 BHIM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── SUPPORT / HELPLINES ───────────────── -->
+<section class="section" id="support">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🤝 Connect</span>
+      <h2>Help & Support</h2>
+      <p>Official verified helpline numbers and emails. Always confirm from the official website before sharing personal information.</p>
+    </div>
+
+    <!-- Email Composer -->
+    <div class="email-composer-card">
+      <h3>✉️ Draft an Email</h3>
+      <p>Select the department and we'll draft a template email for you. <strong>Review before sending!</strong></p>
+      <div class="form-grid" style="max-width:700px">
+        <div class="form-group">
+          <label>Select Department</label>
+          <select id="emailDept">
+            <option value="">Choose...</option>
+            <option value="nsp">NSP – National Scholarship Portal</option>
+            <option value="pfms">PFMS – Payment Support</option>
+            <option value="myscheme">MyScheme</option>
+            <option value="pmvidyalaxmi">PM-Vidyalaxmi</option>
+            <option value="sbi">SBI Education Loan</option>
+            <option value="rajscholarship">Rajasthan Scholarship Portal</option>
+            <option value="rajsje">Rajasthan SJE</option>
+            <option value="ugc">UGC</option>
+            <option value="sbiasha">SBI Asha Scholarship</option>
+            <option value="reliance">Reliance Foundation</option>
+            <option value="sdef">SDEF Scholarship</option>
+            <option value="sitaramjindal">Sitaram Jindal Foundation</option>
+            <option value="buddy4study">Buddy4Study</option>
+            <option value="kotakkanya">Kotak Kanya Scholarship</option>
+            <option value="tatapankh">Tata Capital Pankh</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Query Type</label>
+          <select id="emailQueryType">
+            <option value="status">Application Status</option>
+            <option value="payment">Payment Not Received</option>
+            <option value="eligibility">Eligibility Query</option>
+            <option value="document">Document Submission</option>
+            <option value="renewal">Renewal Process</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Your Name & Application/Reference Number</label>
+          <input type="text" id="emailName" placeholder="e.g. Priya Sharma, App# NSP2026XXXXXXXX" />
+        </div>
+      </div>
+      <button class="btn-primary" onclick="draftEmail()">📝 Generate Email Draft</button>
+      <div id="emailDraft" class="email-draft hidden"></div>
+    </div>
+
+    <!-- Helplines Grid -->
+    <div class="helplines-grid" id="helplinesGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── CONTACT US & FEEDBACK ───────────────── -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📬 Get in Touch</span>
+      <h2>Contact Us & Suggestions</h2>
+      <p>Have an idea to improve the portal, a new scholarship or loan scheme to add, or general feedback? We'd love to hear from you!</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Direct Email Spotlight Card -->
+      <div class="contact-card primary-contact-card">
+        <div class="contact-badge">✉️ Official Direct Email</div>
+        <h3 class="contact-title">We Value Your Voice</h3>
+        <p class="contact-card-sub">
+          Whether you are a student looking for guidance, an educator with suggestions, or someone with updated scholarship deadlines, send us an email directly:
+        </p>
+
+        <div class="contact-email-box">
+          <span class="contact-email-icon">📬</span>
+          <div class="contact-email-info">
+            <span class="contact-email-label">Official Inbox (Suggestions & Feedback)</span>
+            <a href="mailto:ScholarPathIndia@proton.me" class="contact-email-address" id="contactEmailAddress">ScholarPathIndia@proton.me</a>
+          </div>
+          <button class="btn-copy-email" onclick="copyContactEmail(this)" title="Copy email address">
+            <span class="copy-text">📋 Copy</span>
+          </button>
+        </div>
+
+        <div class="contact-actions">
+          <a href="mailto:ScholarPathIndia@proton.me?subject=ScholarPath%20India%20-%20Suggestion%20%2F%20Feedback" class="btn-primary">
+            🚀 Open Mail App
+          </a>
+          <button class="btn-secondary" onclick="focusFeedbackForm()">
+            ✍️ Quick Web Message
+          </button>
+        </div>
+
+        <div class="contact-pills-row">
+          <div class="contact-pill">
+            <span class="pill-icon">💡</span>
+            <div>
+              <strong>Suggestions &amp; Ideas</strong>
+              <small>Feature requests, better tools, UI thoughts</small>
+            </div>
+          </div>
+          <div class="contact-pill">
+            <span class="pill-icon">📝</span>
+            <div>
+              <strong>Scheme Corrections</strong>
+              <small>New scholarships, rate revisions, updated dates</small>
+            </div>
+          </div>
+          <div class="contact-pill">
+            <span class="pill-icon">❓</span>
+            <div>
+              <strong>General Inquiries</strong>
+              <small>Questions about the portal or support</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Quick Mail Form -->
+      <div class="contact-card form-contact-card" id="feedbackFormBlock">
+        <h3 class="contact-title">💬 Send a Message or Suggestion</h3>
+        <p style="color:var(--text2); font-size:0.875rem; margin-bottom:18px;">
+          Type your message below. Clicking send will prepare an email directly to <strong>ScholarPathIndia@proton.me</strong>!
+        </p>
+        <form id="contactFeedbackForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-group" style="margin-bottom:14px;">
+            <label for="contactSenderName">Your Name &amp; Role / Course</label>
+            <input type="text" id="contactSenderName" placeholder="e.g. Ananya Patel (B.Tech 2nd Year, Jaipur)" required />
+          </div>
+
+          <div class="form-group" style="margin-bottom:14px;">
+            <label for="contactCategory">Category of Inquiry</label>
+            <select id="contactCategory" required>
+              <option value="Suggestion for Improvement">💡 Suggestion for the Portal</option>
+              <option value="New Scholarship or Loan Scheme">📝 New Scholarship or Loan to Add</option>
+              <option value="Scheme Data Update / Correction">🔄 Scheme Correction or Date Update</option>
+              <option value="General Feedback">⭐ General Student Feedback</option>
+              <option value="Other Inquiry">📬 Other Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom:18px;">
+            <label for="contactMessage">Your Message / Feedback</label>
+            <textarea id="contactMessage" rows="5" placeholder="Share your suggestions, scheme details, or feedback with us..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+            📨 Send to ScholarPathIndia@proton.me
+          </button>
+        </form>
+        <div id="contactFormResult" class="hidden" style="margin-top:14px; padding:12px; border-radius:10px; font-size:0.875rem;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── FOOTER ───────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-icon">🎓</span><span class="logo-text">ScholarPath<span class="logo-accent">India</span></span></div>
+        <p>India's friendly student aid portal. No login needed. Free forever.</p>
+        <p style="margin-top:8px; font-size:0.85rem; color:var(--text2);">
+          📬 <strong>Contact:</strong> <a href="mailto:ScholarPathIndia@proton.me" style="color:var(--accent); font-weight:600;">ScholarPathIndia@proton.me</a>
+        </p>
+        <p class="footer-disclaimer">⚠️ This portal is informational only. Always verify details on official government/bank websites. Eligibility results are indicative, not guaranteed.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#scholarships">Scholarships</a>
+        <a href="#loans">Education Loans</a>
+        <a href="#content">Resources</a>
+        <a href="#support">Support & Helplines</a>
+        <a href="#contact">Contact &amp; Feedback 📬</a>
+        <a href="#checker">Eligibility Checker</a>
+        <a href="#donate-footer">Support the Portal 💖</a>
+      </div>
+      <div class="footer-links">
+        <h4>Official Portals</h4>
+        <a href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP – scholarships.gov.in</a>
+        <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">MyScheme</a>
+        <a href="https://scholarship.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan Scholarships</a>
+        <a href="https://pmvidyalaxmi.co.in/" target="_blank" rel="noopener">PM-Vidyalaxmi</a>
+        <a href="https://pfms.nic.in/" target="_blank" rel="noopener">PFMS Payment Tracker</a>
+        <a href="https://www.jansamarth.in/" target="_blank" rel="noopener">JanSamarth</a>
+      </div>
+      <div class="footer-links">
+        <h4>Data Sources</h4>
+        <a href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP (scholarships.gov.in)</a>
+        <a href="https://sbi.bank.in/" target="_blank" rel="noopener">SBI (sbi.bank.in)</a>
+        <a href="https://sje.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan SJE</a>
+        <a href="https://www.buddy4study.com/" target="_blank" rel="noopener">Buddy4Study</a>
+        <a href="https://www.ugc.gov.in/" target="_blank" rel="noopener">UGC</a>
+        <small>Data snapshot: Nov 2026. Rates & deadlines may change.</small>
+      </div>
+    </div>
+    <!-- ── SUPPORT / DONATE STRIP ── -->
+    <div class="donate-strip" id="donate-footer">
+      <div class="donate-strip-inner">
+        <div class="donate-text-block">
+          <div class="donate-heading">💖 Support This Portal</div>
+          <p class="donate-body">
+            This portal is built with love to help students like you navigate India's scholarship
+            and loan system for <strong>free</strong>. If it helped you, consider buying the
+            developer a coffee! ☕
+          </p>
+          <p class="donate-sub">
+            Scan the QR code with any UPI app to donate any amount you wish.
+            Every ₹ helps keep this portal running and updated! 🙏
+          </p>
+          <div class="donate-upi-badges">
+            <span>📱 PhonePe</span>
+            <span>💚 GPay</span>
+            <span>🔵 Paytm</span>
+            <span>🟣 BHIM</span>
+            <span>🏦 Any UPI App</span>
+          </div>
+        </div>
+        <div class="donate-qr-block">
+          <div class="donate-qr-label">Scan &amp; Pay ↓</div>
+          <div class="donate-qr-wrap">
+            <img
+              src="assets/qr.png"
+              alt="UPI QR Code — Donate to ScholarPath India"
+              class="donate-qr-img"
+              id="footerQR"
+              onerror="this.closest('.donate-qr-wrap').innerHTML=fallbackQR()"
+            />
+          </div>
+          <div class="donate-qr-note">Any amount · Completely optional · No login</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Built with ❤️ for every student in India. Data verified Nov 2026 · <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">Report Cyber Fraud: 1930</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+function fallbackQR(){
+  return `<div class="donate-qr-placeholder"><span>📱</span><p>QR Code</p><small>Add <code>assets/qr.png</code></small></div>`;
+}
+</script>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
